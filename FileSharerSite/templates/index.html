@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>{{title}}</title>
+</head>
+<body>
+    {% for share in shares %}
+    <p>
+        <b>Title:</b> {{share.title}}<br>
+        <b>Date:</b> {{share.date}}<br>
+        <b>Text:</b> <pre>{{share.text}}</pre><br>
+        <b>File:</b> 
+        {% if share.shared_file %}
+        <a href="
+        {% static share.shared_file.url %}
+        ">{{share.shared_file}}</a>
+        {% else %}
+        without file
+        {% endif %}
+    </p>
+    <hr>
+    <br>
+    {% endfor %}
+</body>
+</html>

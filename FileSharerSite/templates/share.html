@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>{{title}}</title>
+</head>
+<body>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>
+            Title: <input type="text" name="title">
+        </p>
+        <p>
+            Text: <textarea name="text"></textarea>
+        </p>
+        <p>
+            File: <input type="file" name="file">
+        </p>
+        <button type="submit">Share</button>
+    </form>
+
+</body>
+</html>
